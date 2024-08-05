@@ -13,7 +13,8 @@ const mouseEnterFlag = ref(false)
 
 const box_3D_change = () => {
   /*增加3D效果*/
-  VanillaTilt.init(document.querySelector(".background-box"), {
+  console.log(1)
+  VanillaTilt.init(document.querySelectorAll(".background-box"), {
     max: 10,
     speed: 300,
     glare: true,
