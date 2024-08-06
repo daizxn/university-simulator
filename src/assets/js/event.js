@@ -8,10 +8,5 @@ export  class Event {//普通事件类
     }
 }
 
-export  class ActiveTime {//事件触发时间类
-    constructor(beginTime, endTime) {
-        this.beginTime = beginTime;//开始时间
-        this.endTime = endTime;//结束时间
-    }
-}
+
 

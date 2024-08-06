@@ -10,6 +10,8 @@ declare module 'vue' {
     AboutView: typeof import('./src/views/AboutView.vue')['default']
     App: typeof import('./src/App.vue')['default']
     BoxEvent: typeof import('./src/components/localComponents/BoxEvent.vue')['default']
+    BoxItem: typeof import('./src/components/localComponents/BoxItem.vue')['default']
+    BoxPanelItem: typeof import('./src/components/localComponents/BoxPanelItem.vue')['default']
     EndingView: typeof import('./src/views/EndingView.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HomeView: typeof import('./src/views/HomeView.vue')['default']

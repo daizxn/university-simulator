@@ -1,12 +1,26 @@
 <script setup>
-import {ActiveTime, Event} from "@/assets/js/event.js";
+import {Event} from "@/assets/js/event.js";
 import {Data} from "@/assets/js/data.js";
 import VanillaTilt from "vanilla-tilt";
+
+
+const props = defineProps({
+  event: {
+    type: Object,
+    default() {
+      return new Event(-1, "测试标题",
+          "这里有大量的测试文本这里有大量的测试文本这里有大量的测试文本这里有大量的测试文本",
+          1, new Data(1, -0.5, 1, 1, 1));
+    }
+  },
+})
+
+const event = ref(props.event)
 
 /*测试数据*/
 const t = ref(new Event(1, "测试标题",
     "这里有大量的测试文本这里有大量的测试文本这里有大量的测试文本这里有大量的测试文本",
-    new ActiveTime(1, 3), new Data(1, -0.5, 1, 1, 1)));
+    1, new Data(1, -0.5, 1, 1, 1)));
 
 const mouseEnterFlag = ref(false)
 
@@ -20,9 +34,6 @@ const box_3D_change = () => {
     glare: true,
     "max-glare": 0.5,
   });
-
-  /*标记鼠标进入，info信息展示*/
-  mouseEnterFlag.value = true
 }
 
 
@@ -31,8 +42,8 @@ const box_3D_change = () => {
 <template>
   <div class="background-box" @mouseenter="[box_3D_change(),mouseEnterFlag=true]" @mouseleave="mouseEnterFlag=false">
     <div class="info-box">
-      <span class="title">{{ t.title }}</span>
-      <p class="info" v-if="mouseEnterFlag">{{ t.info }}</p>
+      <span class="title">{{ event.title }}</span>
+      <p class="info" v-if="mouseEnterFlag">{{ event.info }}</p>
     </div>
   </div>
 </template>

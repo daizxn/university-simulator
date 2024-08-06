@@ -1,4 +1,12 @@
 <script setup>
+import {Event} from "@/assets/js/event.js";
+import {Data} from "@/assets/js/data.js";
+
+const event = ref(new Event(-1, "测试",
+    "这里有大量的测试文本这里有大量的测试文本这里有大量的测试文本这里有大量的测试文本",
+    1, new Data(1, -0.5, 1, 1, 1)));
+
+
 const eventChoiceBox = ref(null)
 const changeEventBackground_enter = () => {
   eventChoiceBox.value.style.background = 'darkseagreen'
@@ -40,16 +48,18 @@ const changeEventBackground_leave = () => {
         <a class="eventBur">11</a>
         <a class="eventChoice" ref="eventChoiceBox">
           <div>
-            <box-event @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"></box-event>
+            <BoxEvent @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"
+                      :event="event"></BoxEvent>
           </div>
           <div>
-            <box-event @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"></box-event>
+            <BoxEvent @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"
+                      :event="event"></BoxEvent>
           </div>
           <div>
-            <box-event @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"></box-event>
+            <BoxEvent @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"></BoxEvent>
           </div>
           <div>
-            <box-event @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"></box-event>
+            <BoxEvent @mouseenter="changeEventBackground_enter" @mouseleave="changeEventBackground_leave"></BoxEvent>
           </div>
         </a>
         <a class="yourClassInformation">33</a>
